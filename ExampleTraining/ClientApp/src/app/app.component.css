@@ -1,0 +1,18 @@
+path#path212 {
+    fill: blueviolet;
+    
+}
+
+.blue {
+    fill: blue !important;
+}
+
+path {
+    stroke: aliceblue;
+    stroke-width: 1;
+    cursor: pointer;
+}
+
+path:hover {
+    fill: pink;
+}

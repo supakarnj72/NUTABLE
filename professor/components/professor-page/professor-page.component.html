@@ -1,0 +1,130 @@
+<mat-card class="m-4 p-4">
+  <mat-card-header>
+    <mat-card-title>
+      รายชื่ออาจารย์
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row mt-2">
+      <div class="col-10 text-start">
+
+      </div>
+      <div class="col text-end">
+        <button mat-raised-button color="warn"
+          (click)="onClickAddProfessor()"><mat-icon>add</mat-icon>เพิ่มรายชื่ออาจารย์</button>
+      </div>
+    </div>
+
+    <div class="row pt-2">
+      <div class="col">
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+          <ng-container matColumnDef="professorId">
+            <th mat-header-cell *matHeaderCellDef> รหัสอาจารย์ </th>
+            <td mat-cell *matCellDef="let element"> {{element.professorId}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="prefix">
+            <th mat-header-cell *matHeaderCellDef> คำนำหน้า </th>
+            <td mat-cell *matCellDef="let element"> {{element.prefix}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="firstName">
+            <th mat-header-cell *matHeaderCellDef> ชื่อ </th>
+            <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="lastName">
+            <th mat-header-cell *matHeaderCellDef> นามสกุล </th>
+            <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="faculty">
+            <th mat-header-cell *matHeaderCellDef> คณะ </th>
+            <td mat-cell *matCellDef="let element"> {{element.faculty}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef> Edit </th>
+            <td mat-cell *matCellDef="let element"> <mat-icon class="click"
+                (click)="onClickEditProfessor(element)">edit</mat-icon></td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef> Delete </th>
+            <td mat-cell *matCellDef="let element"> <mat-icon>delete</mat-icon></td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+
+<ng-template #professor>
+
+  <div class="modal-header">
+    @if (isEdit) {
+    <h1 mat-dialog-title>แก้ไขรายชื่ออาจารย์</h1>
+    } @else {
+    <h1 mat-dialog-title>เพิ่มรายชื่ออาจารย์</h1>
+    }
+  </div>
+
+  <div class="modal-body">
+
+    <div class="row pt-2">
+      <div class="col-4 text-end">
+        <label class="form-label pt-2">รหัสอาจารย์</label>
+      </div>
+      <div class="col-6">
+        <input class="form-control" [(ngModel)]="param.professorId">
+      </div>
+    </div>
+    <div class="row pt-2">
+      <div class="col-4 text-end">
+        <label class="form-label pt-2">คำนำหน้า</label>
+      </div>
+      <div class="col-6">
+        <input class="form-control" [(ngModel)]="param.prefix">
+      </div>
+    </div>
+    <div class="row pt-2">
+      <div class="col-4 text-end">
+        <label class="form-label pt-2">ชื่อ</label>
+      </div>
+      <div class="col-6">
+        <input class="form-control" [(ngModel)]="param.firstName">
+      </div>
+    </div>
+    <div class="row pt-2">
+      <div class="col-4 text-end">
+        <label class="form-label pt-2">นามสกุล</label>
+      </div>
+      <div class="col-6">
+        <input class="form-control" [(ngModel)]="param.lastName">
+      </div>
+    </div>
+    <div class="row pt-2">
+      <div class="col-4 text-end">
+        <label class="form-label pt-2">คณะ</label>
+      </div>
+      <div class="col-6">
+        <input class="form-control" [(ngModel)]="param.faculty">
+      </div>
+    </div>
+
+    <div class="row pt-4 pb-2 text-center">
+      <div class="col">
+        <button mat-raised-button color="warn" class="mx-4" (click)="onClickConfirm()">ยืนยัน</button>
+        <button mat-raised-button (click)="modalRef.hide()">ยกเลิก</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

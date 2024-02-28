@@ -1,0 +1,72 @@
+<mat-card class="m-4 p-4">
+  <mat-card-header>
+    <mat-card-title>
+      จัดตารางสอน
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <div class="row mt-2" style="padding-left: 19rem;">
+      <div class=" col-10 text-end">
+        <mat-form-field>
+          <mat-label>เลือกชั้นปี</mat-label>
+          <mat-select>
+            @for (year of courseYear; track $index) {
+            <mat-option [value]="year.value">{{year.text}}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-2 text-end">
+        <button mat-raised-button color="warn"
+          (click)="onClickAddCourseGroup()"><mat-icon>add</mat-icon>เพิ่มกลุ่มเรียน</button>
+      </div>
+    </div>
+
+
+    <div class="row mt-2">
+      <div class="col">
+        <h3>กลุ่มเรียน</h3>
+
+        <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+          <ng-container matColumnDef="courseYear">
+            <th mat-header-cell *matHeaderCellDef> Course Year </th>
+            <td mat-cell *matCellDef="let element"> {{element.courseYear}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="courseQty">
+            <th mat-header-cell *matHeaderCellDef> Course Qty </th>
+            <td mat-cell *matCellDef="let element" > {{element.courseQty}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="creditUnits">
+            <th mat-header-cell *matHeaderCellDef> Units </th>
+            <td mat-cell *matCellDef="let element"> {{element.creditUnits}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef> Edit </th>
+            <td mat-cell *matCellDef="let element"> <mat-icon class="click"
+                (click)="onClickEditCourseYear(element)">edit</mat-icon></td>
+          </ng-container>
+
+          <ng-container matColumnDef="view">
+            <th mat-header-cell *matHeaderCellDef> View </th>
+            <td mat-cell *matCellDef="let element"> <mat-icon class="click" (click)="onClickViewCourseYear(element)">visibility</mat-icon></td>
+          </ng-container>
+
+          <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef> Delete </th>
+            <td mat-cell *matCellDef="let element"> <mat-icon>delete</mat-icon></td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table> -->
+
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>

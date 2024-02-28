@@ -1,0 +1,106 @@
+<mat-card class="m-4 p-4">
+  <mat-card-header>
+    <mat-card-title>
+      หลักสูตร {{ courseYear }}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <div class="row">
+      <div class="col">
+        <ng-container class="overflow-auto mt-2" style="width: 100%;">
+          @for (item of courseData; track $index) {
+          <div class="row mt-4">
+            <div class="col">
+              <h2>ปี {{ item.yearCourse }}</h2>
+            </div>
+            <div class="col-3 text-end">
+              <button mat-raised-button color="warn"
+                (click)="onClickAddSubject()"><mat-icon>add</mat-icon>เพิ่มวิชา</button>
+            </div>
+          </div>
+          @for (data of item.data; track $index) {
+          <table id="customers" class="mt-1">
+            <tr class="verflow-auto" style="width: 100%;">
+
+              <th style="min-width: 230px; text-align: center;"> รหัสวิชา</th>
+              <th style="min-width: 400px; text-align: center;"> ชื่อวิชา </th>
+              <th style="min-width: 70px; text-align: center;"> ชื่อภาษาอังกฤษ </th>
+              <th style="min-width: 70px; text-align: center;"> หน่วยกิต </th>
+              <th style="min-width: 70px; text-align: center;"> </th>
+              <th style="min-width: 70px; text-align: center;"> </th>
+
+            </tr>
+
+            <tr class="overflow-auto" style="width: 100%;">
+
+              <td style="min-width: 100px;"> {{ data.courseCode }}</td>
+              <td style="min-width: 350px;"> {{ data.courseName }} </td>
+              <td style="min-width: 350px;"> {{ data.courseNameEN }}</td>
+              <td style="min-width: 70px; text-align: end;"> {{ data.creditUnits }}</td>
+              <td style="min-width: 70px; text-align: center;"><mat-icon class="click"
+                  (click)="onClickEditCourse()">edit</mat-icon> </td>
+              <td style="min-width: 70px; text-align: center;"><mat-icon>delete</mat-icon> </td>
+
+            </tr>
+
+          </table>
+          }
+          }
+        </ng-container>
+      </div>
+    </div>
+
+
+  </mat-card-content>
+</mat-card>
+
+<ng-template #course>
+
+  <div class="modal-header">
+    <h1 mat-dialog-title>เพิ่มวิชา</h1>
+  </div>
+
+  <div class="modal-body">
+
+    <div class="row pt-2">
+      <div class="col-4 text-end">
+        <label class="form-label pt-2">รหัสวิชา</label>
+      </div>
+      <div class="col-6">
+        <input class="form-control">
+      </div>
+    </div>
+    <div class="row pt-2">
+      <div class="col-4 text-end">
+        <label class="form-label pt-2">ชื่อวิชา</label>
+      </div>
+      <div class="col-6">
+        <input class="form-control">
+      </div>
+    </div>
+    <div class="row pt-2">
+      <div class="col-4 text-end">
+        <label class="form-label pt-2">ชื่อภาษาอังกฤษ</label>
+      </div>
+      <div class="col-6">
+        <input class="form-control">
+      </div>
+    </div>
+    <div class="row pt-2">
+      <div class="col-4 text-end">
+        <label class="form-label pt-2">หน่วยกิต</label>
+      </div>
+      <div class="col-6">
+        <input class="form-control">
+      </div>
+    </div>
+
+    <div class="row pt-4 pb-2 text-center">
+      <div class="col">
+        <button mat-raised-button color="warn" class="mx-4" (click)="onClickConfirm()">ยืนยัน</button>
+        <button mat-raised-button (click)="modalRef.hide()">ยกเลิก</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

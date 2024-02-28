@@ -1,0 +1,16 @@
+D:\projects\Research\examtraning\Service\bin\Debug\net6.0\Service.deps.json
+D:\projects\Research\examtraning\Service\bin\Debug\net6.0\Service.dll
+D:\projects\Research\examtraning\Service\bin\Debug\net6.0\Service.pdb
+D:\projects\Research\examtraning\Service\bin\Debug\net6.0\Domain.dll
+D:\projects\Research\examtraning\Service\bin\Debug\net6.0\Domain.pdb
+D:\projects\Research\examtraning\Service\obj\Debug\net6.0\Service.csproj.AssemblyReference.cache
+D:\projects\Research\examtraning\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\Research\examtraning\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache
+D:\projects\Research\examtraning\Service\obj\Debug\net6.0\Service.AssemblyInfo.cs
+D:\projects\Research\examtraning\Service\obj\Debug\net6.0\Service.csproj.CoreCompileInputs.cache
+D:\projects\Research\examtraning\Service\obj\Debug\net6.0\Service.csproj.CopyComplete
+D:\projects\Research\examtraning\Service\obj\Debug\net6.0\Service.dll
+D:\projects\Research\examtraning\Service\obj\Debug\net6.0\refint\Service.dll
+D:\projects\Research\examtraning\Service\obj\Debug\net6.0\Service.pdb
+D:\projects\Research\examtraning\Service\obj\Debug\net6.0\ref\Service.dll
+D:\projects\Research\examtraning\Service\obj\Debug\net6.0\Service.sourcelink.json

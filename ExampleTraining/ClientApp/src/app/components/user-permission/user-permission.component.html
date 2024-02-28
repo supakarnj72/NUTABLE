@@ -1,0 +1,59 @@
+<ul>
+    <li><a style="cursor: pointer; text-decoration: none;" [routerLink]="['/home']">Home</a></li>
+    <li><a style="cursor: pointer; text-decoration: none;" [routerLink]="['/customer-list']">Customer
+            List</a></li>
+    <li><a style="cursor: pointer; text-decoration: none;" [routerLink]="['/user-list']">User
+            List</a></li>
+    <li><a class="active" style="cursor: pointer; text-decoration: none;" [routerLink]="['/user-permission']">User
+            Permission</a></li>
+    <li style="float:right;"><a style="cursor: pointer; text-decoration: none;" (click)="onLogOut()">Log
+            Out</a></li>
+</ul>
+
+
+<div class="row mt-5 mx-1">
+    <div class="col-2 mt-2 ms-3 text-center">
+        <span>Username</span>
+    </div>
+    <div class="col-3">
+        <dx-select-box #selectBox [formControl]="selectUser" [dataSource]="dataSource" displayExpr="username"
+            (onValueChanged)="onSelectUsername()" valueExpr="userId"></dx-select-box>
+    </div>
+</div>
+
+<div class="row mx-5 mt-3">
+    <div class="col">
+        <dx-data-grid #permissionGrid class="col text-center" [remoteOperations]="true" [dataSource]="dataMenu"
+            [showBorders]="true">
+
+            <dxo-pager [visible]="true" [allowedPageSizes]="allowedPageSizes" [displayMode]="displayMode"
+                [showInfo]="showInfo" [showNavigationButtons]="showNavButtons"></dxo-pager>
+
+            <dxo-paging [pageSize]="5"></dxo-paging>
+
+            <dxi-column class="ag-grid" dataField="menuName" caption="Menu Name" alignment="left"></dxi-column>
+            <dxi-column class="ag-grid" dataField="isAllow" caption="Allow" alignment="left"
+                cellTemplate="allowTemplate">
+                <div *dxTemplate="let cell of 'allowTemplate'" class="text-center">
+                    <dx-check-box type="checkbox" [value]="cell.data.isAllow"
+                        (onValueChanged)="onAllowChange(cell.data,$event)"
+                        [disabled]="userInUse == cell.data.userId || selectBox.value == 1"></dx-check-box>
+                </div>
+            </dxi-column>
+            <dxi-column class="ag-grid" dataField="permission" caption="Permission" alignment="left"
+                cellTemplate="cellTemplate">
+                <div *dxTemplate="let cell of 'cellTemplate'" class="text-center">
+                    <div *ngIf="cell.data.isAllow">
+                        <dx-radio-group [items]="permissionItem"
+                            [value]="cell.data.permission === 'Read' ? permissionItem[0] : permissionItem[1]"
+                            layout="horizontal"
+                            (onValueChanged)="onPermissionChanged(cell.data,$event)"
+                            [disabled]="userInUse == cell.data.userId || selectBox.value == 1">
+                        </dx-radio-group>
+                    </div>
+                </div>
+            </dxi-column>
+
+        </dx-data-grid>
+    </div>
+</div>
