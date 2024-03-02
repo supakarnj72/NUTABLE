@@ -22,6 +22,7 @@ import { UnauthizeComponent } from './components/unauthize/unauthize.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { DatePipe } from '@angular/common';
 import dxCheckBox from 'devextreme/ui/check_box';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import dxCheckBox from 'devextreme/ui/check_box';
     DxDateBoxModule,
     DxSliderModule,
     DxCheckBoxModule,
-    DxRadioGroupModule
+    DxRadioGroupModule,
+    BrowserAnimationsModule
   ],
   providers: [CustomerService,DatePipe],
   bootstrap: [AppComponent]

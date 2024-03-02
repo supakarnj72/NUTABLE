@@ -6,7 +6,5 @@ export class Safe {
 
     transform(style: any) {
         return this.sanitizer.bypassSecurityTrustHtml(style);
-        //return this.sanitizer.bypassSecurityTrustStyle(style);
-        // return this.sanitizer.bypassSecurityTrustXxx(style); - see docs
     }
 }
