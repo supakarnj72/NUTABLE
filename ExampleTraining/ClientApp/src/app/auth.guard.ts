@@ -16,7 +16,6 @@ export class AuthGuard implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    console.log("start auth");
     let model: PermissionViewModel;
     let isAuth: boolean;
     this.authService.getAuthStatus(this.id, state.url).subscribe((res: PermissionViewModel) => {
