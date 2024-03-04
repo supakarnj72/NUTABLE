@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MatCardModule } from '@angular/material/card';
 @Component({
-  selector: 'app-home-page',
+  selector: 'home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  styleUrls: ['./home-page.component.css'],
+  standalone: true,
+  imports: [MatCardModule]
 })
 export class HomePageComponent implements OnInit {
 

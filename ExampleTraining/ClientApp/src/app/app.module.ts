@@ -12,6 +12,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { HighlightDirective } from './highlight.directive';
 import { DxCheckBoxModule, DxDateBoxModule, DxRadioGroupModule, DxSelectBoxModule, DxSliderModule } from 'devextreme-angular';
 import { DatePipe } from '@angular/common';
+import { MenuComponent } from './components/core/menu/menu.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { DatePipe } from '@angular/common';
     AppComponent,
     Safe,
     HighlightDirective,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,7 @@ import { DatePipe } from '@angular/common';
     DxCheckBoxModule,
     DxRadioGroupModule
   ],
-  providers: [CustomerService,DatePipe],
+  providers: [CustomerService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

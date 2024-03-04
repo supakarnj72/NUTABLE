@@ -1,3 +1,99 @@
-<p>
-  course-page works!
-</p>
+<mat-card class="m-4 p-4">
+  <mat-card-header>
+    <mat-card-title>
+      หลักสูตร
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <div class="row mt-2">
+      <div class="col-9 text-start">
+        <h4>หลักสูตรของคณะวิศวกรรมศาสตร์ สาขาคอมพิวเตอร์</h4>
+      </div>
+      <div class="col-3 text-end">
+        <!-- <button mat-raised-button color="warn"
+          (click)="onClickAddCourseYear()"><mat-icon>add</mat-icon>เพิ่มหลักสูตร</button> -->
+      </div>
+    </div>
+
+
+    <div class="row mt-2">
+      <div class="col">
+
+        <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+          <ng-container matColumnDef="courseYear">
+            <th mat-header-cell *matHeaderCellDef> Course Year </th>
+            <td mat-cell *matCellDef="let element"> {{element.courseYear}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="courseQty">
+            <th mat-header-cell *matHeaderCellDef> Course Qty </th>
+            <td mat-cell *matCellDef="let element"> {{element.courseQty}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="creditUnits">
+            <th mat-header-cell *matHeaderCellDef> Units </th>
+            <td mat-cell *matCellDef="let element"> {{element.creditUnits}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef> Edit </th>
+            <td mat-cell *matCellDef="let element"> <mat-icon class="click"
+                (click)="onClickEditCourseYear(element)">edit</mat-icon></td>
+          </ng-container>
+
+          <ng-container matColumnDef="view">
+            <th mat-header-cell *matHeaderCellDef> View </th>
+            <td mat-cell *matCellDef="let element"> <mat-icon class="click" (click)="onClickViewCourseYear(element)">visibility</mat-icon></td>
+          </ng-container>
+
+          <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef> Delete </th>
+            <td mat-cell *matCellDef="let element"> <mat-icon>delete</mat-icon></td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table> -->
+
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+
+
+<ng-template #courseYear>
+  @if (isEdit) {
+  <div class="modal-header">
+    <h1 mat-dialog-title>แก้ไขหลักสูตร</h1>
+  </div>
+
+  } @else {
+  <div class="modal-header">
+    <h1 mat-dialog-title>เพิ่มหลักสูตร</h1>
+  </div>
+  }
+  <div class="modal-body">
+    <div class="row pt-2">
+      <div class="col-3 text-end">
+        <label class="form-label pt-2">หลักสูตรปี</label>
+      </div>
+      <div class="col-7">
+        <!-- <input class="form-control" [(ngModel)]="param.courseYear"> -->
+      </div>
+    </div>
+
+    <!-- <div class="row pt-4 text-center">
+      <div class="col">
+        @if (isEdit) {
+        <button mat-raised-button color="warn" class="mx-4">ยืนยัน</button>
+        } @else {
+        <button mat-raised-button color="warn" class="mx-4" (click)="onClickConfirm()">ยืนยัน</button>
+        }
+        <button mat-raised-button (click)="modalRef.hide()">ยกเลิก</button>
+      </div>
+    </div> -->
+  </div>
+</ng-template>
