@@ -25,6 +25,11 @@ yarn-error.log
 *.user
 *.userosscache
 *.sln.docstates
+.suo
+.bin
+.cache
+
+
 
 # Visual Studio Code
 .vscode/*
