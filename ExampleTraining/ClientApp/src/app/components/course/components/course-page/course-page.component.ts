@@ -6,8 +6,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
-import { ModalModule } from 'ngx-bootstrap/modal/modal.module';
-import { BsModalService } from 'ngx-bootstrap/modal/bs-modal.service';
 
 @Component({
   selector: 'course-page',
@@ -21,9 +19,7 @@ import { BsModalService } from 'ngx-bootstrap/modal/bs-modal.service';
     MatCardModule,
     MatTableModule,
     FormsModule,
-    ModalModule,
-  ],
-  providers: [BsModalService]
+  ]
 })
 export class CoursePageComponent implements OnInit {
 
